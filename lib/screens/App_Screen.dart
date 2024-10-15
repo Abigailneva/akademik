@@ -1,12 +1,18 @@
-///File download from FlutterViz- Drag and drop a tools. For more details visit https://flutterviz.io/
-
+import 'package:akademik/screens/Akun_Login.dart';
 import 'package:flutter/material.dart';
 
-class AppSplash extends StatelessWidget {
- const AppSplash({Key? key}) : super(key: key);
+class AppScreen extends StatelessWidget {
+const AppScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(Duration(seconds: 3)).then((value) {
+Navigator.of(context).pushAndRemoveUntil(
+  MaterialPageRoute(
+    builder: (context) => AkunLogin(),), (Route) => false);
+    });
+
+
     return Scaffold(
       backgroundColor: Color(0xffffffff),
       body: SizedBox(
@@ -35,7 +41,7 @@ class AppSplash extends StatelessWidget {
                   children: [
                     ///***If you have exported images you must have to copy those images in assets/images directory.
                     Image.asset(
-                      "assets/images/Logotanpateks.png",
+                      'assets/images/Logotanpateks.png',
                       height: 100,
                       width: 140,
                       fit: BoxFit.contain,
